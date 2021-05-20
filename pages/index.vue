@@ -1,34 +1,36 @@
 <template>
   <div>
-    <TheHeader />
+    <!-- <TheHeader /> -->
 
-    <h1 class="font-bold text-4xl">
+    <h1 class="p-8 font-bold text-4xl">
       Blog Posts
     </h1>
-    <ul class="mt-8 flex flex-wrap">
-      <li
-        v-for="article of articles"
-        :key="article.slug"
-        class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card"
-      >
-        <NuxtLink
-          :to="{ name: 'blog-slug', params: { slug: article.slug } }"
-          class="flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md xxlmax:flex-col"
+    <div class="container">
+      <ul class="mt-8 flex flex-wrap">
+        <li
+          v-for="article of articles"
+          :key="article.slug"
+          class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 @apply rounded-md border-2 border-gray-400 m-8"
         >
-          <div
-            class="p-6 flex flex-col justify-between xxlmin:w-1/2 xxlmax:w-full"
+          <NuxtLink
+            :to="{ name: 'blog-slug', params: { slug: article.slug } }"
+            class="flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md xxlmax:flex-col"
           >
-            <h2 class="font-bold text-2xl">
-              {{ article.title }}
-            </h2>
-            <p>by {{ article.author.name }}</p>
-            <p class="mt-4 font-medium text-gray-200 text-lg">
-              {{ article.description }}
-            </p>
-          </div>
-        </NuxtLink>
-      </li>
-    </ul>
+            <div
+              class="p-6 flex flex-col justify-between xxlmin:w-1/2 xxlmax:w-full"
+            >
+              <h2 class="font-bold text-2xl text-gray-300">
+                {{ article.title }}
+              </h2>
+              <p>by {{ article.author.name }}</p>
+              <p class="mt-4 font-medium text-gray-300 text-lg">
+                {{ article.description }}
+              </p>
+            </div>
+          </NuxtLink>
+        </li>
+      </ul>
+    </div>
     <h3 class="mb-4 font-bold text-2xl uppercase text-center">
       Topics
     </h3>
@@ -85,12 +87,16 @@ export default {
 </script>
 
 <style class="postcss">
+.container {
+  @apply min-h-screen flex justify-center items-center mx-auto;
+}
+
 .article-card {
-  @apply rounded-md;
+  @apply rounded-md border-2 border-gray-400;
 }
 
 .article-card a {
-  @apply bg-gray-700 rounded-md;
+  @apply rounded-md;
 }
 
 .article-card img div {

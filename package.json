@@ -16,10 +16,11 @@
     "*.{css,vue}": "stylelint"
   },
   "husky": {
-    "hooks": { }
+    "hooks": {}
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
+    "@tailwindcss/typography": "^0.4.0",
     "eslint-config-standard": "^16.0.2",
     "nuxt": "^2.15.3",
     "prism-themes": "1.5.0"

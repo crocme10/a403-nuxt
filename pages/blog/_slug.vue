@@ -47,7 +47,7 @@
     <div
       class="relative xs:py-8 xs:px-8 lg:py-32 lg:px-16 lg:w-3/4 xs:w-full h-full overflow-y-scroll markdown-body post-right custom-scroll"
     >
-      <h1 class="font-bold text-4xl">
+      <h1 class="font-bold text-6xl">
         {{ article.title }}
       </h1>
       <p class="mt-8 text-lg">
@@ -80,7 +80,7 @@
         </ul>
       </nav>
       <!-- content from markdown -->
-      <nuxt-content :document="article" />
+      <nuxt-content class="mb-16 prose prose-xl" :document="article" />
       <!-- content author component -->
       <author :author="article.author" />
       <!-- prevNext component -->
@@ -118,22 +118,28 @@ export default {
 }
 </script>
 <style>
-.nuxt-content p {
-  @apply mb-4;
+.nuxt-content.prose {
+  @apply text-gray-300;
 }
-.nuxt-content h2 {
-  font-weight: bold;
-  font-size: 28px;
+
+.nuxt-content.prose code,
+.nuxt-content.prose blockquote,
+.nuxt-content.prose a,
+.nuxt-content.prose span,
+.nuxt-content.prose h4,
+.nuxt-content.prose h3,
+.nuxt-content.prose h2,
+.nuxt-content.prose h1 {
+  @apply text-gray-300;
 }
-.nuxt-content h3 {
-  font-weight: bold;
-  font-size: 22px;
-}
+
 .icon.icon-link {
-  background-image: url('~assets/svg/icon-hashtag.svg');
+  /* background-image: url('~assets/svg/icon-hashtag.svg'); */
+  color: white;
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-size: 20px 20px;
+  margin-right: 2rem;
+}
+.icon.icon-link:after {
+  content: ' \00A7';
 }
 </style>

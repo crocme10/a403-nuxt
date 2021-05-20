@@ -56,7 +56,7 @@ export default {
   content: {
     markdown: {
       prism: {
-        theme: 'prism-themes/themes/prism-tomorrow-night.css'
+        theme: 'prism-themes/themes/prism-nord.css'
       }
     },
     nestedProperties: ['author.name']
