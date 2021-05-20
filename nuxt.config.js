@@ -42,7 +42,7 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
-    '@nuxtjs/stylelint-module',
+    // '@nuxtjs/stylelint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss'
   ],
@@ -53,21 +53,19 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content'
   ],
-  /*
-   ** Content module configuration
-   ** See https://content.nuxtjs.org/configuration
-   */
   content: {
     markdown: {
       prism: {
-        theme: 'prism-themes/themes/prism-material-oceanic.css'
+        theme: 'prism-themes/themes/prism-tomorrow-night.css'
       }
     },
     nestedProperties: ['author.name']
   },
-  /*
-   ** Build configuration
-   ** See https://nuxtjs.org/api/configuration-build/
-   */
-  build: {}
+  build: {},
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+    configPath: '~/tailwind.config.js',
+    exposeConfig: false,
+    config: {}
+  }
 }
