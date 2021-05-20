@@ -13,12 +13,6 @@
           :to="{ name: 'blog-slug', params: { slug: article.slug } }"
           class="flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md xxlmax:flex-col"
         >
-          <img
-            v-if="article.img"
-            class="h-48 xxlmin:w-1/2 xxlmax:w-full object-cover"
-            :src="article.img"
-          />
-
           <div
             class="p-6 flex flex-col justify-between xxlmin:w-1/2 xxlmax:w-full"
           >
