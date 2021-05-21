@@ -1,14 +1,13 @@
 ---
 title: Try Extend
 description: I am a description of a great article
-img: https://images.unsplash.com/photo-1588514727390-91fd5ebaef81?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=639&q=80
-alt: article 7
+img: /img/stocks/leaves.jpg
+alt: Photo by <a href="https://unsplash.com/@ilypnytskyi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Igor Lypnytskyi</a> on <a href="https://unsplash.com/@ilypnytskyi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 author: 
   name: Matthieu
   bio: Rust and such
-  img: https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2551&q=80
-tags: 
-  - web development
+  img: /img/profiles/programmer.svg
+tags:  ['rust']
 ---
 
 Wild imaginings on a trait `TryExtend`, which is a variation on

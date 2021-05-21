@@ -27,6 +27,29 @@
             </span>
           </NuxtLink>
         </span>
+        <!-- table of contents -->
+        <nav class="mt-16 ml-8 text-xl leading-loose">
+          <ul>
+            <li
+              v-for="link of article.toc"
+              :key="link.id"
+              :class="{
+                'font-semibold': link.depth === 2
+              }"
+            >
+              <nuxtLink
+                :to="`#${link.id}`"
+                class="hover:underline"
+                :class="{
+                  'py-2': link.depth === 2,
+                  'ml-4 pb-2': link.depth === 3
+                }"
+              >
+                {{ link.text }}
+              </nuxtLink>
+            </li>
+          </ul>
+        </nav>
       </div>
       <div class="flex absolute top-3rem right-3rem">
         <NuxtLink
@@ -56,31 +79,8 @@
       <p class="mt-8 pb-4">
         Post last updated: {{ formatDate(article.updatedAt) }}
       </p>
-      <!-- table of contents -->
-      <nav class="pb-6">
-        <ul>
-          <li
-            v-for="link of article.toc"
-            :key="link.id"
-            :class="{
-              'font-semibold': link.depth === 2
-            }"
-          >
-            <nuxtLink
-              :to="`#${link.id}`"
-              class="hover:underline"
-              :class="{
-                'py-2': link.depth === 2,
-                'ml-2 pb-2': link.depth === 3
-              }"
-            >
-              {{ link.text }}
-            </nuxtLink>
-          </li>
-        </ul>
-      </nav>
       <!-- content from markdown -->
-      <nuxt-content class="mb-16 prose prose-xl" :document="article" />
+      <nuxt-content class="my-16 prose prose-xl" :document="article" />
       <!-- content author component -->
       <author :author="article.author" />
       <!-- prevNext component -->
@@ -126,6 +126,7 @@ export default {
 .nuxt-content.prose blockquote,
 .nuxt-content.prose a,
 .nuxt-content.prose span,
+.nuxt-content.prose strong,
 .nuxt-content.prose h4,
 .nuxt-content.prose h3,
 .nuxt-content.prose h2,
