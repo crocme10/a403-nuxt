@@ -2,7 +2,7 @@
   <article
     class="flex lg:h-screen w-screen lg:overflow-hidden xs:flex-col lg:flex-row"
   >
-    <div class="relative lg:w-1/2 xs:w-full xs:h-84 lg:h-full post-left">
+    <div class="relative lg:w-1/3 xs:w-full xs:h-84 lg:h-full post-left">
       <div class="overlay" />
       <div class="absolute top-32 left-32 text-white">
         <NuxtLink to="/">
