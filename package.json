@@ -1,5 +1,6 @@
 {
-  "name": "nuxt-content-article",
+  "name": "Area403",
+  "description": "Personal Website",
   "version": "1.0.0",
   "private": true,
   "scripts": {
