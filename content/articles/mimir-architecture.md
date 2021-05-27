@@ -350,13 +350,30 @@ pub struct GenerateIndex {
 }
 
 impl GenerateIndex {
-  fn new(storage: Box<dyn Storage + Send + Sync + 'static>)
-    -> GenerateIndex {
-    GenerateIndex { storage }
-  }
+    fn new(storage: Box<dyn Storage + Send + Sync + 'static>) -> Self {
+        GenerateIndex { storage }
+    }
+}
+
+#[cfg(test)]
+pub mod tests {
+
+    use super::GenerateIndex;
+    use crate::domain::ports::storage::MockStorage;
+
+    async fn some_interesting_test() {
+        let storage = MockStorage::new();
+        let usecase = GenerateIndex::new(storage);
+    }
 }
 ```
 
+The use case includes the premise of a test.
+
+Unfortunately, the compiler reminds us that the `Storage` trait we built is not object safe because the method
+`insert_document` has generic type parameters.
+
+It seems the best solution to this problem is the one proposed by David Tolnay for his crate erased-serde.
 
 ## References
 

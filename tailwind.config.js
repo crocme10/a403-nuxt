@@ -6,15 +6,6 @@
  */
 module.exports = {
   theme: {
-    screens: {
-      xs: '320px',
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
-      xxlmin: '1351px',
-      xxlmax: { max: '1350px' }
-    },
     fontFamily: {
       display: ['ZillaSlab', 'sans-serif'],
       body: ['ZillaSlab', 'sans-serif'],
@@ -45,18 +36,8 @@ module.exports = {
       margin: {
         '-fullh': '-100vh'
       }
-    },
-    inset: {
-      0: 0,
-      16: '16px',
-      32: '32px',
-      64: '64px',
-      '2rem': '2rem',
-      '3rem': '3rem'
     }
   },
   variants: {},
-  plugins: [
-    require('@tailwindcss/typography')
-  ]
+  plugins: []
 }

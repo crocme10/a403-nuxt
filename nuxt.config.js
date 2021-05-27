@@ -4,6 +4,12 @@ export default {
    ** See https://nuxtjs.org/api/configuration-target
    */
   target: 'static',
+
+  server: {
+    port: 3000, // default: 3000
+    host: '0.0.0.0', // default: localhost,
+    timing: false
+  },
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
@@ -24,9 +30,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [
-    '~/assets/css/prism.css'
-  ],
+  css: [],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins

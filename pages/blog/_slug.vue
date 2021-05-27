@@ -68,7 +68,7 @@
         Post last updated: {{ formatDate(article.updatedAt) }}
       </p>
       <!-- content from markdown -->
-      <nuxt-content class="my-16 prose prose-xl" :document="article" />
+      <nuxt-content class="my-12 max-w-5xl" :document="article" />
       <!-- content author component -->
       <author :author="article.author" />
       <!-- prevNext component -->
@@ -110,30 +110,75 @@ export default {
   }
 }
 </script>
+
 <style>
-.nuxt-content.prose {
-  @apply font-thin text-gray-300;
+.nuxt-content {
+  @apply text-xl font-thin text-gray-300
 }
 
-.nuxt-content.prose code,
-.nuxt-content.prose blockquote,
-.nuxt-content.prose a,
-.nuxt-content.prose span,
-.nuxt-content.prose strong,
-.nuxt-content.prose h4,
-.nuxt-content.prose h3,
-.nuxt-content.prose h2,
-.nuxt-content.prose h1 {
-  @apply text-gray-300;
+.nuxt-content p {
+  @apply my-4
 }
 
-.icon.icon-link {
-  /* background-image: url('~assets/svg/icon-hashtag.svg'); */
-  color: white;
-  display: inline-block;
-  margin-right: 2rem;
+.nuxt-content h2 {
+  @apply mt-10 mb-6 ml-4 text-4xl font-bold tracking-wider
 }
-.icon.icon-link:after {
-  content: ' \00A7';
+
+.nuxt-content h3 {
+  @apply mt-10 mb-6 ml-4 text-3xl font-bold
 }
+
+.nuxt-content h4 {
+  @apply mt-10 mb-6 ml-4 text-2xl font-medium
+}
+
+.nuxt-content ul {
+  @apply list-disc list-inside
+}
+
+.nuxt-content a {
+  @apply underline
+}
+
+.nuxt-content code {
+  @apply font-mono
+}
+
+/* .nuxt-content {
+  @apply break-words;
+} */
+
+.nuxt-content .nuxt-content-highlight {
+  @apply mb-6
+}
+.nuxt-content .nuxt-content-highlight .code-toolbar .line-numbers {
+  @apply leading-5
+}
+
+.nuxt-content .nuxt-content-highlight > .filename {
+  @apply block bg-gray-700 text-gray-100 font-mono text-lg tracking-tight py-2 px-4 -mb-3 rounded-t text-right
+}
+
+.nuxt-content .nuxt-content-highlight .code-toolbar {
+  @apply relative
+}
+
+.nuxt-content .nuxt-content-highlight .code-toolbar .toolbar {
+  @apply absolute top-0 right-0 opacity-75 space-x-2
+}
+
+.nuxt-content .nuxt-content-highlight .code-toolbar .toolbar .toolbar-item {
+  @apply inline-block
+}
+
+.nuxt-content .nuxt-content-highlight .code-toolbar .toolbar .toolbar-item a {
+  @apply cursor-pointer
+}
+
+.nuxt-content .nuxt-content-highlight .code-toolbar .toolbar .toolbar-item a,
+.nuxt-content .nuxt-content-highlight .code-toolbar .toolbar .toolbar-item button,
+.nuxt-content .nuxt-content-highlight .code-toolbar .toolbar .toolbar-item span {
+  @apply mr-6 mt-6 px-4 py-2 text-gray-100 hover:text-white text-lg bg-gray-600 shadow-sm rounded-lg leading-tight
+}
+
 </style>
