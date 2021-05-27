@@ -24,7 +24,9 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: [
+    '~/assets/css/prism.css'
+  ],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -57,7 +59,8 @@ export default {
     markdown: {
       prism: {
         theme: 'prism-themes/themes/prism-nord.css'
-      }
+      },
+      remarkPlugins: ['remark-footnotes']
     },
     nestedProperties: ['author.name']
   },

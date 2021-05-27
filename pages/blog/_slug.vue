@@ -77,6 +77,8 @@
   </article>
 </template>
 <script>
+import Prism from '~/plugins/prism'
+
 export default {
   async asyncData ({ $content, params }) {
     const article = await $content('articles', params.slug).fetch()
@@ -97,6 +99,9 @@ export default {
       next
     }
   },
+  mounted () {
+    Prism.highlightAll()
+  },
   methods: {
     formatDate (date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }
@@ -107,7 +112,7 @@ export default {
 </script>
 <style>
 .nuxt-content.prose {
-  @apply text-gray-300;
+  @apply font-thin text-gray-300;
 }
 
 .nuxt-content.prose code,

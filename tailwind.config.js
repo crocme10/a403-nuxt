@@ -17,7 +17,8 @@ module.exports = {
     },
     fontFamily: {
       display: ['ZillaSlab', 'sans-serif'],
-      body: ['ZillaSlab', 'sans-serif']
+      body: ['ZillaSlab', 'sans-serif'],
+      mono: ['Iosevka', 'mono']
     },
     borderWidth: {
       default: '1px',
