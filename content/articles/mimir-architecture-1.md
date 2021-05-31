@@ -119,7 +119,7 @@ We can start with a clean slate
 cargo new --lib mimir
 ```
 
-[github](34e9226)
+[github](https://github.com/crocme10/mimir/tree/baseline)
 
 I would like the source code to reflect the architecture, so I will create the following files and
 directories under `src`:
@@ -206,7 +206,7 @@ serde = { version = "1.0", features = [ "derive", "rc" ] }
 
 You can now try `cargo build`, and it should work. Granted, it's not very useful...
 
-[github](6e2ad18)
+You can find the code at this stage on [github](https://github.com/crocme10/mimir/tree/model)
 
 ### Ports
 
@@ -315,7 +315,7 @@ There are some questionable choices in the interface.
 4. A little type alias would look better instead of `index: String` or `id: String`.
 5. What's up with all that `Send + Sync + 'static`
 
-[github](f09cfc1)
+The code is available on [github](https://github.com/crocme10/mimir/tree/storage)
 
 Ok, we've defined an interface, we can go about testing it. [FIXME: why interface -> testing]
 
@@ -384,7 +384,7 @@ pub mod tests {
 
 The use case includes the premise of a test.
 
-[github](8c47f1f)
+[github](https://github.com/crocme10/mimir/tree/usecase)
 
 Unfortunately, the compiler reminds us that the `Storage` trait we built is not object safe because the method
 `insert_document` has generic type parameters.
@@ -443,7 +443,7 @@ pub mod tests {
 And this will compile just fine, albeit with warnings because some variables are defined but not used.
 We can think about a first test then...
 
-[github](572ed43)
+[github](https://github.com/crocme10/mimir/tree/trait-erasure)
 
 ### Tying Use Case and Port together in a Test
 
@@ -624,7 +624,7 @@ The first test is a left over from the original code, and we can remove it:
 pub mod domain;
 ```
 
-[github](9c59982)
+[github](https://github.com/crocme10/mimir/tree/first-test)
 
 ## Conclusion Part I
 
