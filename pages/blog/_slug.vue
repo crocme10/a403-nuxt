@@ -4,7 +4,7 @@
   >
     <div class="relative lg:w-1/3 xs:w-full xs:h-84 lg:h-full post-left">
       <div class="overlay" />
-      <div class="absolute top-32 left-32 text-white">
+      <div class="absolute top-8 left-8 text-white">
         <NuxtLink to="/">
           <Logo />
         </NuxtLink>
@@ -51,22 +51,23 @@
           </ul>
         </nav>
       </div>
-      <div class="flex absolute top-3rem right-3rem">
+      <div class="flex absolute top-8 right-8">
         <AppSearchInput />
       </div>
     </div>
     <div
       class="relative xs:py-8 xs:px-8 lg:py-32 lg:px-16 lg:w-3/4 xs:w-full h-full overflow-y-scroll markdown-body post-right custom-scroll"
     >
-      <h1 class="font-bold text-6xl">
+      <!--<h1 class="font-bold text-6xl">
         {{ article.title }}
-      </h1>
-      <p class="mt-8 text-lg">
+      </h1>-->
+      <p class="mt-8 text-4xl font-medium italic w-2/3">
         {{ article.description }}
       </p>
-      <p class="mt-8 pb-4">
+      <p class="mt-8 pb-4 text-lg max-w-5xl">
         Post last updated: {{ formatDate(article.updatedAt) }}
       </p>
+      <hr class="mb-12 w-2/3" />
       <!-- content from markdown -->
       <nuxt-content class="my-12 max-w-5xl" :document="article" />
       <!-- content author component -->
@@ -176,9 +177,24 @@ export default {
 }
 
 .nuxt-content .nuxt-content-highlight .code-toolbar .toolbar .toolbar-item a,
-.nuxt-content .nuxt-content-highlight .code-toolbar .toolbar .toolbar-item button,
-.nuxt-content .nuxt-content-highlight .code-toolbar .toolbar .toolbar-item span {
+.nuxt-content .nuxt-content-highlight .code-toolbar .toolbar .toolbar-item button {
   @apply mr-6 mt-6 px-4 py-2 text-gray-100 hover:text-white text-lg bg-gray-600 shadow-sm rounded-lg leading-tight
 }
 
+.nuxt-content .nuxt-content-highlight .code-toolbar .toolbar .toolbar-item span {
+  @apply invisible
+}
+
+.nuxt-content alert.warning {
+  @apply block bg-red-300 bg-opacity-50 rounded-lg py-2 pl-8 my-12 text-white
+}
+.nuxt-content alert.warning:before {
+  content: '(!) ';
+}
+.nuxt-content alert.question {
+  @apply block bg-blue-300 bg-opacity-50 rounded-lg py-2 pl-8 my-12 text-white
+}
+.nuxt-content alert.question:before {
+  content: '(?) ';
+}
 </style>
