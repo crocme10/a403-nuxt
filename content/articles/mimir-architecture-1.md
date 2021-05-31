@@ -633,6 +633,8 @@ So far we have layed out the domain, with its main components:
 * the **port** on the backend, `Storage`, to interact with Elasticsearch
 * the **usecase** `GenerateIndex`, to make use of a backend port.
 
+![Domain](/img/mimir-architecture/domain-details-0.svg)
+
 We have created a unit test, which ties all these components together.
 
 You can continue to the [second article](/blog/mimir-architecture-2).

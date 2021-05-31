@@ -67,7 +67,7 @@
       <p class="mt-8 pb-4 text-lg max-w-5xl">
         Post last updated: {{ formatDate(article.updatedAt) }}
       </p>
-      <hr class="mb-12 w-2/3" />
+      <hr class="mb-12 max-w-5xl" />
       <!-- content from markdown -->
       <nuxt-content class="my-12 max-w-5xl" :document="article" />
       <!-- content author component -->

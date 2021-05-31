@@ -10,6 +10,10 @@ author:
 tags:  ['rust', 'hexagonal architecture', 'elasticsearch']
 ---
 
+This is the second part in a [series](/blog/mimir-architecture).
+
+<br/>
+
 ## Secondary Adapters
 
 We'll focus on the implementation of the `Storage` trait. Of course, the main artisan of this implementation is the
@@ -498,5 +502,15 @@ impl From<Exception> for Error {
 At this point I don't see a clean way to do unit tests for this Elasticsearch client code. We cannot really mock the
 Elasticsearch response...
 </alert>
+
+## Conclusion
+
+We've implemented the Elasticsearch adapter, such that the functionality defined by the `Storage` port can now be
+activated. Along the way, we've had to implement conversion code, such that the structures needed by Elasticsearch can
+be transmitted to and from the `Storage` port.
+
+![Elasticsearch Adapter](/img/mimir-architecture/secondary-adapter-0.svg)
+
+In the [next article](/blog/mimir-architecture-3) we will look into the primary adapter.
 
 [github](65f323a)

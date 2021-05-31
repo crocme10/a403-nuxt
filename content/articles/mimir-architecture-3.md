@@ -10,6 +10,10 @@ author:
 tags:  ['rust', 'hexagonal architecture']
 ---
 
+This is the third part in a [series](/blog/mimir-architecture).
+
+<br/>
+
 ## Primary Adapters
 
 Recall the difference we made between driving and driven adapters. We just completed the Elasticsearch adapter, which

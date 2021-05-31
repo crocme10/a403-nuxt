@@ -1,11 +1,36 @@
 <template>
-  <div>
-    <!-- <TheHeader /> -->
-
-    <h1 class="p-8 font-bold text-4xl">
-      Blog Posts
-    </h1>
-    <div class="container">
+  <div class="flex lg:h-screen w-screen lg:overflow-hidden xs:flex-col lg:flex-row">
+    <div class="relative lg:w-1/3 xs:w-full xs:h-84 lg:h-full post-left">
+      <div class="overlay" />
+      <div class="absolute top-8 left-8 text-white">
+        <NuxtLink to="/">
+          <Logo />
+        </NuxtLink>
+        <!-- table of contents -->
+        <nav class="mt-16 ml-8 text-xl leading-loose">
+          <ul>
+            <li
+              v-for="tag of tags"
+              :key="tag.slug"
+            >
+              <NuxtLink :to="`/blog/tag/${tag.slug}`" class="">
+                <p
+                  class="font-bold text-gray-600 uppercase tracking-wider font-medium text-ss"
+                >
+                  {{ tag.name }}
+                </p>
+              </NuxtLink>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="relative xs:py-8 xs:px-8 lg:py-32 lg:px-16 lg:w-3/4 xs:w-full h-full overflow-y-scroll markdown-body post-right custom-scroll">
+      <div class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 m-8">
+        <h1 class="text-4xl font-bold">
+          Articles
+        </h1>
+      </div>
       <ul class="mt-8 flex flex-wrap">
         <li
           v-for="article of articles"
@@ -31,39 +56,6 @@
         </li>
       </ul>
     </div>
-    <h3 class="mb-4 font-bold text-2xl uppercase text-center">
-      Topics
-    </h3>
-    <ul class="flex flex-wrap mb-4 text-center">
-      <li
-        v-for="tag of tags"
-        :key="tag.slug"
-        class="xs:w-full md:w-1/3 lg:flex-1 px-2 text-center"
-      >
-        <NuxtLink :to="`/blog/tag/${tag.slug}`" class="">
-          <p
-            class="font-bold text-gray-600 uppercase tracking-wider font-medium text-ss"
-          >
-            {{ tag.name }}
-          </p>
-        </NuxtLink>
-      </li>
-    </ul>
-    <footer class="flex justify-center border-gray-500 border-t-2">
-      <p class="mt-4">
-        Created by
-        <a
-          href="https://twitter.com/debs_obrien"
-          class="font-bold hover:underline"
-        >Debbie O'Brien</a>
-        at NuxtJS. See the
-        <a
-          href="https://nuxtjs.org/blog/creating-blog-with-nuxt-content"
-          class="font-bold hover:underline"
-        >tutorial</a>
-        for how to build it.
-      </p>
-    </footer>
   </div>
 </template>
 
